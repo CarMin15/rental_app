@@ -87,12 +87,61 @@
 
 /* Search column */
 
-/*.rentals {
-	border: 1px solid blue;
+.rentals {
 	margin: 10px;
 }
 
 #rentals_search > input {
 	margin: 0px 10px;
+	padding: 8px 20px 8px 10px;
+	
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+    appearance: none;
+
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
 }
-*/
+
+#rentals_search select {
+	font-size: 14px;
+    padding: 8px 35px 8px 10px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+
+	background: url("../images/arrow.png") no-repeat;
+    background-size: 18px 36px;
+    background-position: 73px 0px;
+}
+
+#rentals_search > .submit_button {
+	margin: 0px 10px;
+	padding: 8px 20px 8px 10px;
+	font-size: 14px;
+	
+	background-color: #6699FF;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+    appearance: none;
+
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+}
