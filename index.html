@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Rental App</title>
+	<link rel="stylesheet" href="CSS/reset.css">
 	<link rel="stylesheet" href="CSS/main.css">
 </head>
 <body>
@@ -11,9 +12,9 @@
 			<div>
 				<img src="images/red_triangle.jpeg" alt="Rental App">
 			</div>
-			<div>
+			<div>	
 				<form>
-					<select>
+					<select class="cities">
 						<option value="paris">Paris</option>
 						<option value="london">London</option>
 						<option value="newyork">New York</option>
@@ -21,16 +22,33 @@
 					</select>
 				</form>
 			</div>
-			<div>
-				<ul>
+			<div class="pull-right">
+				<ul class="">
 					<li><a href="#">Become a host</a></li>
-					<li><a href="#">Messages</a></li>
-					<li><a href="#">Help</a></li>
-					<li><a href="#">Maria</a></li>
+					<li>
+						<a href="#">
+							<span>Messages <img src="images/bubble.png" alt="Mail box" class="header_icon"></span>
+							
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>Help</span>
+							<img src="images/help.png" alt="Mail box" class="header_icon">
+						</a>
+					</li>
+					<li>
+					<a href="#">
+						<span>Maria</span>
+						<img src="images/snoopy.png" alt="Mail box" class="header_icon2">
+					</a></li>
 				</ul>
 			</div>
+
+			<br class="clear_both" />
 		</section>
 	</header>
+	
 	<section>
 		<div class="rentals">
 			<!-- Search column -->
