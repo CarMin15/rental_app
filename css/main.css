@@ -28,11 +28,25 @@
 	border-left: 1px solid #999999;
 }
 
-.cities {
+.cities select {
 	font-size: 14px;
-	border: 0;
-	-webkit-appearance: none;
-	background: url("arrow.png") no-repeat;
+    padding: 8px 15px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+
+	background: url("../images/arrow.png") no-repeat;
+    background-size: 18px 36px;
+    background-position: 72px 0px;
 }
 
 .navigation_header > div.pull-right {
