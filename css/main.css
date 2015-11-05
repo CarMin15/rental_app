@@ -95,6 +95,7 @@
 #map_location {
 	width: 40%;
 	float: right;
+	padding: 0;
 }
 
 #search_columns {
@@ -157,9 +158,14 @@
     border-radius: 0px;
 }
 
+#rentals_search > input, select {
+	padding-right: 80px;
+}
+
 .houses {
 	width: 200px;
 	height: 200px;
 	display: inline-block;
 	margin: 10px;
 }
+
