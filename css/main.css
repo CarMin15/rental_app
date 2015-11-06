@@ -276,7 +276,18 @@
 /***** Right Column -- MAP *******/
 
 #map_location {
-	padding: 0;
+   position: relative;
+   padding-bottom: 55%; // This is the aspect ratio
+   height: 0;
+   overflow: hidden;
+}
+
+#map_location > iframe {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /******** Media queries *********/
