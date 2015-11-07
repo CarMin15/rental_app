@@ -90,14 +90,27 @@
 /******* SEARCH COLUMN ********/
 
 /* Appartments location column */
-
-#rentals {
-	width: 60%;
-	float: left;
+#search_columns {
+	position: absolute;
 }
 
-#rentals > .search {
+#rentals {
+	top: 61px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 60%;
+    background-color: #E8E8E8;
+}
+
+#rentals > div {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+#rentals > div > .search {
 	padding: 10px 0px;
+	background-color: #FFF;
 }
 
 #rentals_search > input {
@@ -157,10 +170,6 @@
 
 #rentals_search > input, select {
 	padding-right: 80px;
-}
-
-#apartments {
-	background-color: #E8E8E8;
 }
 
 .apartment {
@@ -276,10 +285,14 @@
 /***** Right Column -- MAP *******/
 
 #map_location {
-   position: relative;
-   padding-bottom: 55%; // This is the aspect ratio
-   height: 0;
-   overflow: hidden;
+	top: 61px;
+    position: fixed;
+    right: 0;
+    left: auto;
+    bottom: 0;
+    width: 40%;
+    background: blue; // for testing
+    height: 100%;
 }
 
 #map_location > iframe {

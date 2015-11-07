@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Rental App</title>
-	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,700' rel='stylesheet' type='text/css'>
+	<!--<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="CSS/reset.css">
 	<link rel="stylesheet" href="CSS/main.css">
 </head>
@@ -54,134 +54,138 @@
 	
 	<section id="search_columns">
 		<div id="rentals">
-			<!-- Search column -->
-			<div class="search">
-				<form id="rentals_search">
-					<input type="text">
-					<input type="text">
-					<select>
-						<option value="1guest">1 guest</option>
-						<option value="2guests">2 guests</option>
-						<option value="3guests">3 guests</option>
-						<option value="4guests">4 guests</option>
-						<option value="5guests">5 guests</option>
-					</select>
-					<input type="submit" value="Search" class="submit_button">
-				</form>
-			</div>
-			<div id="apartments">
-				<div class="apartment">
-					<div class="apartment_gallery">
-						<ul class="gallery">
-							<li>
-								<img src="images/house1.jpeg" alt="House1" class="apartment_p">
-							</li>
-						</ul>
-						<img src="images/not_liked.png" alt="Like" class="like_button" />
-						<div class="price_wrapper">
-							<span class="currency">$</span>
-							<span class="price">104</span>
-							<img src="images/instant_book.png" alt="Instant booking available!" class="instant_book" />
-						</div>
-					</div>
-					<div class="apartment_description">
-						<a href="#">
-							<img src="images/man1.jpeg" alt="owner1" class="owner" />	
-						</a>
-						<a href="#">
-							<span class="apartment_name">House number 1</span>
-							<span class="apartment_kind">Entire home/apt</span>
-							<span class="apartment_score">&bull; 4.5/5</span>
-							<span class="apartment_reviews">&bull; 27 reviews</span>
-						</a>
-					</div>
+			<div>
+				<!-- Search column -->
+				<div class="search">
+					<form id="rentals_search">
+						<input type="text">
+						<input type="text">
+						<select>
+							<option value="1guest">1 guest</option>
+							<option value="2guests">2 guests</option>
+							<option value="3guests">3 guests</option>
+							<option value="4guests">4 guests</option>
+							<option value="5guests">5 guests</option>
+						</select>
+						<input type="submit" value="Search" class="submit_button">
+					</form>
 				</div>
-
-				<div class="apartment">
-					<div class="apartment_gallery">
-						<ul class="gallery">
-							<li>
-								<img src="images/house2.jpeg" alt="House2" class="apartment_p">
-							</li>
-						</ul>
-						<img src="images/not_liked.png" alt="Like" class="like_button" />
-						<div class="price_wrapper">
-							<span class="currency">$</span>
-							<span class="price">104</span>
-							<img src="images/instant_book.png" alt="Instant booking available!" class="instant_book" />
+				<div id="apartments">
+					<div class="apartment">
+						<div class="apartment_gallery">
+							<ul class="gallery">
+								<li>
+									<img src="images/house1.jpeg" alt="House1" class="apartment_p">
+								</li>
+							</ul>
+							<img src="images/not_liked.png" alt="Like" class="like_button" />
+							<div class="price_wrapper">
+								<span class="currency">$</span>
+								<span class="price">104</span>
+								<img src="images/instant_book.png" alt="Instant booking available!" class="instant_book" />
+							</div>
+						</div>
+						<div class="apartment_description">
+							<a href="#">
+								<img src="images/man1.jpeg" alt="owner1" class="owner" />	
+							</a>
+							<a href="#">
+								<span class="apartment_name">House number 1</span>
+								<span class="apartment_kind">Entire home/apt</span>
+								<span class="apartment_score">&bull; 4.5/5</span>
+								<span class="apartment_reviews">&bull; 27 reviews</span>
+							</a>
 						</div>
 					</div>
-					<div class="apartment_description">
-						<a href="#">
-							<img src="images/man2.jpeg" alt="owner1" class="owner">	
-						</a>
-						<a href="#">
-							<span class="apartment_name">House number 2</span>
-							<span class="apartment_kind">Entire home/apt</span>
-							<span class="apartment_score">&bull; 4.5/5</span>
-							<span class="apartment_reviews">&bull; 27 reviews</span>
-						</a>
-					</div>
-				</div>
 
-				<div class="apartment">
-					<div class="apartment_gallery">
-						<ul class="gallery">
-							<li>
-								<img src="images/house3.jpeg" alt="House3" class="apartment_p">
-							</li>
-						</ul>
-						<img src="images/not_liked.png" alt="Like" class="like_button" />
-						<div class="price_wrapper">
-							<span class="currency">$</span>
-							<span class="price">104</span>
-							<img src="images/instant_book.png" alt="Instant booking available!" class="instant_book" />
+					<div class="apartment">
+						<div class="apartment_gallery">
+							<ul class="gallery">
+								<li>
+									<img src="images/house2.jpeg" alt="House2" class="apartment_p">
+								</li>
+							</ul>
+							<img src="images/not_liked.png" alt="Like" class="like_button" />
+							<div class="price_wrapper">
+								<span class="currency">$</span>
+								<span class="price">104</span>
+								<img src="images/instant_book.png" alt="Instant booking available!" class="instant_book" />
+							</div>
+						</div>
+						<div class="apartment_description">
+							<a href="#">
+								<img src="images/man2.jpeg" alt="owner1" class="owner">	
+							</a>
+							<a href="#">
+								<span class="apartment_name">House number 2</span>
+								<span class="apartment_kind">Entire home/apt</span>
+								<span class="apartment_score">&bull; 4.5/5</span>
+								<span class="apartment_reviews">&bull; 27 reviews</span>
+							</a>
 						</div>
 					</div>
-					<div class="apartment_description">
-						<a href="#">
-							<img src="images/woman.jpeg" alt="owner1" class="owner">	
-						</a>
-						<a href="#">
-							<span class="apartment_name">House number 3</span>
-							<span class="apartment_kind">Entire home/apt</span>
-							<span class="apartment_score">&bull; 4.5/5</span>
-							<span class="apartment_reviews">&bull; 27 reviews</span>
-						</a>
-					</div>
-				</div>
 
-				<div class="apartment">
-					<div class="apartment_gallery">
-						<ul class="gallery">
-							<li>
-								<img src="images/house1.jpeg" alt="House1" class="apartment_p">
-							</li>
-						</ul>
-						<img src="images/not_liked.png" alt="Like" class="like_button" />
-						<div class="price_wrapper">
-							<span class="currency">$</span>
-							<span class="price">104</span>
-							<img src="images/instant_book.png" alt="Instant booking available!" class="instant_book" />
+					<div class="apartment">
+						<div class="apartment_gallery">
+							<ul class="gallery">
+								<li>
+									<img src="images/house3.jpeg" alt="House3" class="apartment_p">
+								</li>
+							</ul>
+							<img src="images/not_liked.png" alt="Like" class="like_button" />
+							<div class="price_wrapper">
+								<span class="currency">$</span>
+								<span class="price">104</span>
+								<img src="images/instant_book.png" alt="Instant booking available!" class="instant_book" />
+							</div>
+						</div>
+						<div class="apartment_description">
+							<a href="#">
+								<img src="images/woman.jpeg" alt="owner1" class="owner">	
+							</a>
+							<a href="#">
+								<span class="apartment_name">House number 3</span>
+								<span class="apartment_kind">Entire home/apt</span>
+								<span class="apartment_score">&bull; 4.5/5</span>
+								<span class="apartment_reviews">&bull; 27 reviews</span>
+							</a>
 						</div>
 					</div>
-					<div class="apartment_description">
-						<a href="#">
-							<img src="images/man1.jpeg" alt="owner1" class="owner">	
-						</a>
-						<a href="#">
-							<span class="apartment_name">House number 4</span>
-							<span class="apartment_kind">Entire home/apt</span>
-							<span class="apartment_score">&bull; 4/5</span>
-							<span class="apartment_reviews">&bull; 27 reviews</span>
-						</a>
+
+					<div class="apartment">
+						<div class="apartment_gallery">
+							<ul class="gallery">
+								<li>
+									<img src="images/house1.jpeg" alt="House1" class="apartment_p">
+								</li>
+							</ul>
+							<img src="images/not_liked.png" alt="Like" class="like_button" />
+							<div class="price_wrapper">
+								<span class="currency">$</span>
+								<span class="price">104</span>
+								<img src="images/instant_book.png" alt="Instant booking available!" class="instant_book" />
+							</div>
+						</div>
+						<div class="apartment_description">
+							<a href="#">
+								<img src="images/man1.jpeg" alt="owner1" class="owner">	
+							</a>
+							<a href="#">
+								<span class="apartment_name">House number 4</span>
+								<span class="apartment_kind">Entire home/apt</span>
+								<span class="apartment_score">&bull; 4/5</span>
+								<span class="apartment_reviews">&bull; 27 reviews</span>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- Apartments location column -->
 		<div id="map_location">
+		<!--
 			<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="500" height="443" src="https://maps.google.com/maps?hl=en&q=paris&ie=UTF8&t=roadmap&z=6&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div><div><small><a href="http://www.premiumlinkgenerator.com/">visit this website</a></small></div></iframe>
+			-->
 		</div>
 	</section>
 </body>
