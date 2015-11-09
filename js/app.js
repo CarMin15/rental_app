@@ -11,6 +11,8 @@
 
 	/***** SEARCH RESULTS - APARTMENTS ******/
 
-$(".like_button").click(function() {
-	$( this ).attr( "src", "images/liked.png" );
+$(function() {
+	$(document).on('click', '.like_button', function() {
+		$(this).toggleClass("not_liked");
+	});
 });

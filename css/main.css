@@ -207,7 +207,15 @@
 	width: 32px;
 	height: 32px;
 	position: absolute;
+	background: url(../images/liked.png);
+	background-size: 32px 32px;
 }
+
+.apartment_gallery .like_button.not_liked {
+	background: url(../images/not_liked.png);
+	background-size: 32px 32px;
+}
+
 
 .apartment_gallery .price_wrapper {
 	left: 0px;
