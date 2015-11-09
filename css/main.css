@@ -299,7 +299,7 @@
     left: auto;
     bottom: 0;
     width: 40%;
-   /* background: blue;*/ // for testing
+    background: blue; // for testing
     height: 100%;
 }
 
