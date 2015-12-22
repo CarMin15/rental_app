@@ -239,10 +239,14 @@
 }
 
 .apartment_gallery .price_wrapper .instant_book {
-    display: inline-block;
+    display: none;
     vertical-align: middle;
     height: 20px;
     margin-top: -9px;
+}
+
+.apartment_gallery .price_wrapper .instant_book.active {
+	display: inline-block;
 }
 
 .apartment .apartment_description {
@@ -267,7 +271,7 @@
 }
 
 .apartment .apartment_description .apartment_name {
-	font-family: 'Titillium Web', sans-serif;
+	font-family: sans-serif;
 	display: block;
 	width: 75%;
 	white-space: nowrap;
@@ -280,15 +284,11 @@
 	text-decoration: underline;
 }
 
-.apartment .apartment_description .apartment_kind, .apartment_reviews {
-	font-family: 'Titillium Web', sans-serif;
+.apartment .apartment_description .apartment_kind, .apartment_reviews, .apartment_score {
+	font-family: sans-serif;
 	color:#C0C0C0;
 }
 
-.apartment .apartment_description .apartment_score {
-	font-family: 'Titillium Web', sans-serif;
-	color:#FFCC33;
-}
 
 /***** Right Column -- MAP *******/
 
