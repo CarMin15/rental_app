@@ -101,6 +101,13 @@ $(function() {
   $( "#rentals_search" ).on("submit", function(e){
     e.preventDefault();
     updateListingFromForm();
+
+  });
+
+/***** Updating the results with the same dates if changing cities ******/
+
+  $( "#citiesList" ).change(function(e){
+    updateListingFromForm();
   });
 
 
