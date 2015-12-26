@@ -17,13 +17,25 @@ $(function() {
 	/**** SEARCH BOXES - CALENDAR & BUTTON ******/
 
 
-  $( "#start_date, #end_date" ).datepicker({
-    dateFormat: "dd-mm-yy"
+  $( "#start_date" ).datepicker({
+    dateFormat: "dd-mm-yy",
+    minDate: new Date()
+  });
+
+  $( "#end_date" ).datepicker({
+    dateFormat: "dd-mm-yy",
+    minDate: +1
   });
 
   $( "#start_date" ).datepicker("setDate", new Date());
   $( "#end_date" ).datepicker("setDate", +1);
 
+  $( "#start_date" ).on("change", function(e){
+    var start_date = moment($( "#start_date" ).val(), "DD-MM-YYYY");
+    var following_day = start_date.clone().add(1, "days").format("DD-MM-YYYY");
+
+    $( "#end_date" ).datepicker( "option", "minDate", following_day );
+  });
 
 
   var updateListing = function(city, start_date, end_date, nb_guests){
@@ -76,11 +88,12 @@ $(function() {
 
   var updateListingFromForm = function(){
     var city = $( "#citiesList" ).val();
-    var start_date = $( "#start_date" ).val();
-    var end_date = $( "#end_date" ).val();
+    var start_date = moment($( "#start_date" ).val(), "DD-MM-YYYY");
+    var end_date = moment($( "#end_date" ).val(), "DD-MM-YYYY");
     var nb_guests = $("#nb_guests" ).val();
 
-    updateListing(city, start_date, end_date, nb_guests);
+
+    updateListing(city, start_date.format("DD-MM-YYYY"), end_date.format("DD-MM-YYYY"), nb_guests);
   };
 
   
