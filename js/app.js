@@ -10,64 +10,86 @@ $(function() {
 		});
 
 		$( "#citiesList" ).html(html);
+
+    updateListingFromForm();
 	});
 
 	/**** SEARCH BOXES - CALENDAR & BUTTON ******/
 
 
-// $.datepicker.setDefaults({
-//   showOn: "both",
-//   buttonImageOnly: true,
-//   buttonImage: "calendar.gif",
-//   buttonText: "Calendar"
-// });
-
-  //$.datepick({minDate: new Date(2014, 12-1, 25)});
-  $( "#start_date, #end_date" ).datepicker();
-
-
-
-  $.getJSON("http://rental-app-rails.herokuapp.com/cities/new-york/rentals.json?start_date&end_date5&nb_guests=1", function(data){
-    var html = "";
-
-    $(data).each(function(i, apartment) {
-      
-      var liked = (apartment.user_liked) ? "" : "not_liked";  
-
-      var instant_book = (apartment.instant_book) ? "active" : "";
-
-      html += ' \
-      <div class="apartment"> \
-        <div class="apartment_gallery"> \
-          <ul class="gallery"> \
-            <li> \
-              <img src="'+ apartment.pictures[0].url +'" alt="'+ apartment.name +'" class="apartment_p"> \
-            </li> \
-          </ul> \
-          <i class="like_button '+ liked +'"></i> \
-          <div class="price_wrapper"> \
-            <span class="currency">$</span> \
-            <span class="price">' + apartment.price + '</span> \
-            <img src="images/instant_book.png" alt="Instant booking available!" class="instant_book ' + instant_book + '" /> \
-          </div> \
-        </div> \
-        <div class="apartment_description"> \
-          <a href="' + apartment.user.profile_url + '"> \
-            <img src="'+ apartment.user.profile_picture_url + '" alt="' + apartment.user.name + '" class="owner"> \
-          </a> \
-          <a href="#"> \
-            <span class="apartment_name">' + apartment.name + '</span> \
-            <span class="apartment_kind">' + apartment.kind + '</span> \
-            <span class="apartment_score">&bull; ' + apartment.score + '/5</span> \
-            <span class="apartment_reviews">&bull; '+ apartment.reviews_count + ' reviews</span> \
-          </a> \
-        </div> \
-      </div>'; 
-    });
-
-
-    $( "#apartments" ).html(html);
+  $( "#start_date, #end_date" ).datepicker({
+    dateFormat: "dd-mm-yy"
   });
+
+  $( "#start_date" ).datepicker("setDate", new Date());
+  $( "#end_date" ).datepicker("setDate", +1);
+
+
+
+  var updateListing = function(city, start_date, end_date, nb_guests){
+    var url = "http://rental-app-rails.herokuapp.com/cities/" + city + "/rentals.json?";
+    url += "start_date="+ start_date +"&end_date="+ end_date +"&nb_guests="+ nb_guests;
+
+    $.getJSON(url, function(data){
+      var html = "";
+
+      $(data).each(function(i, apartment) {
+        
+        var liked = (apartment.user_liked) ? "" : "not_liked";  
+
+        var instant_book = (apartment.instant_book) ? "active" : "";
+
+        html += ' \
+        <div class="apartment"> \
+          <div class="apartment_gallery"> \
+            <ul class="gallery"> \
+              <li> \
+                <img src="'+ apartment.pictures[0].url +'" alt="'+ apartment.name +'" class="apartment_p"> \
+              </li> \
+            </ul> \
+            <i class="like_button '+ liked +'"></i> \
+            <div class="price_wrapper"> \
+              <span class="currency">$</span> \
+              <span class="price">' + apartment.price + '</span> \
+              <img src="images/instant_book.png" alt="Instant booking available!" class="instant_book ' + instant_book + '" /> \
+            </div> \
+          </div> \
+          <div class="apartment_description"> \
+            <a href="' + apartment.user.profile_url + '"> \
+              <img src="'+ apartment.user.profile_picture_url + '" alt="' + apartment.user.name + '" class="owner"> \
+            </a> \
+            <a href="#"> \
+              <span class="apartment_name">' + apartment.name + '</span> \
+              <span class="apartment_kind">' + apartment.kind + '</span> \
+              <span class="apartment_score">&bull; ' + apartment.score + '/5</span> \
+              <span class="apartment_reviews">&bull; '+ apartment.reviews_count + ' reviews</span> \
+            </a> \
+          </div> \
+        </div>'; 
+      });
+
+
+      $( "#apartments" ).html(html);
+    });
+  };
+
+
+  var updateListingFromForm = function(){
+    var city = $( "#citiesList" ).val();
+    var start_date = $( "#start_date" ).val();
+    var end_date = $( "#end_date" ).val();
+    var nb_guests = $("#nb_guests" ).val();
+
+    updateListing(city, start_date, end_date, nb_guests);
+  };
+
+  
+
+  $( "#rentals_search" ).on("submit", function(e){
+    e.preventDefault();
+    updateListingFromForm();
+  });
+
 
 
 	/***** SEARCH RESULTS - APARTMENTS ******/
