@@ -49,36 +49,11 @@ $(function() {
         mapResetMarkers();
 
         $(data).each(function(i, apartment) {
-          var liked = (apartment.user_liked) ? "" : "not_liked";  
-          var instant_book = (apartment.instant_book) ? "active" : "";
-
-          html += ' \
-          <div class="apartment"> \
-            <div class="apartment_gallery"> \
-              <ul class="gallery"> \
-                <li> \
-                  <img src="'+ apartment.pictures[0].url +'" alt="'+ apartment.name +'" class="apartment_p"> \
-                </li> \
-              </ul> \
-              <i class="like_button '+ liked +'"></i> \
-              <div class="price_wrapper"> \
-                <span class="currency">$</span> \
-                <span class="price">' + apartment.price + '</span> \
-                <img src="images/instant_book.png" alt="Instant booking available!" class="instant_book ' + instant_book + '" /> \
-              </div> \
-            </div> \
-            <div class="apartment_description"> \
-              <a href="' + apartment.user.profile_url + '"> \
-                <img src="'+ apartment.user.profile_picture_url + '" alt="' + apartment.user.name + '" class="owner"> \
-              </a> \
-              <a href="#"> \
-                <span class="apartment_name">' + apartment.name + '</span> \
-                <span class="apartment_kind">' + apartment.kind + '</span> \
-                <span class="apartment_score">&bull; ' + apartment.score + '/5</span> \
-                <span class="apartment_reviews">&bull; '+ apartment.reviews_count + ' reviews</span> \
-              </a> \
-            </div> \
-          </div>'; 
+          apartment.liked = (apartment.user_liked) ? "" : "not_liked";  
+          apartment.instant_book = (apartment.instant_book) ? "active" : "";
+          apartment.primary_picture_url = apartment.pictures[0].url;
+          
+          html += rentalTemplate(apartment);
 
           mapAddMarker(apartment.lat, apartment.lng, apartment.name);
         });
@@ -98,7 +73,6 @@ $(function() {
     var start_date = moment($( "#start_date" ).val(), "DD-MM-YYYY");
     var end_date = moment($( "#end_date" ).val(), "DD-MM-YYYY");
     var nb_guests = $("#nb_guests" ).val();
-
 
     updateListing(city, start_date.format("DD-MM-YYYY"), end_date.format("DD-MM-YYYY"), nb_guests);
   };
@@ -126,6 +100,7 @@ $(function() {
 	$(document).on('click', '.like_button', function() {
 		$(this).toggleClass("not_liked");
 	});
+
 
   /***** Map -- markers ******/
 
@@ -160,6 +135,11 @@ $(function() {
 
     bounds = new google.maps.LatLngBounds();
   };
+
+
+  /***** Handlebars templates ******/
+
+  var rentalTemplate = Handlebars.compile($("#rentals-template").html());
 });
 
 
