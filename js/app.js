@@ -53,9 +53,11 @@ $(function() {
           apartment.instant_book = (apartment.instant_book) ? "active" : "";
           apartment.primary_picture_url = apartment.pictures[0].url;
           
-          html += rentalTemplate(apartment);
+          var rentalHTML = rentalTemplate(apartment);
+          html += rentalHTML;
 
-          mapAddMarker(apartment.lat, apartment.lng, apartment.name);
+          mapAddMarker(apartment.lat, apartment.lng, apartment.id, rentalHTML);
+
         });
 
         map.fitBounds(bounds);
@@ -102,26 +104,42 @@ $(function() {
 	});
 
 
-  /***** Map -- markers ******/
+  /***** Map -- markers  and infowindows ******/
 
   var map;
   var bounds = new google.maps.LatLngBounds();
   var markers = [];
+  var openInfowindow;
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.7833, lng: -122.4167},
     zoom: 13
   });
 
-  var mapAddMarker = function(lat, lng, title) {
+  var mapAddMarker = function(lat, lng, id, html) {
     var position = new google.maps.LatLng(lat, lng);
     
     bounds.extend(position);
 
     var marker = new google.maps.Marker({
       position: position,
-      map: map,
-      title: title
+      map: map
+    });
+
+    marker.id = id;
+
+    var infowindow = new google.maps.InfoWindow({
+      content: html
+    });
+
+    marker.addListener('click', function() {
+      if (openInfowindow) {
+        openInfowindow.close();
+        openInfowindow = undefined;
+      }
+
+      infowindow.open(map, marker);
+      openInfowindow = infowindow;
     });
 
     markers.push(marker);
