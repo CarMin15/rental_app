@@ -46,6 +46,8 @@ $(function() {
       var html = "";
 
       if (data.length > 0) {
+        mapResetMarkers();
+
         $(data).each(function(i, apartment) {
           var liked = (apartment.user_liked) ? "" : "not_liked";  
           var instant_book = (apartment.instant_book) ? "active" : "";
@@ -77,7 +79,11 @@ $(function() {
               </a> \
             </div> \
           </div>'; 
+
+          mapAddMarker(apartment.lat, apartment.lng, apartment.name);
         });
+
+        map.fitBounds(bounds);
       } else {
         html = "<p>No results found.</p>";
       }
@@ -102,11 +108,9 @@ $(function() {
   $( "#rentals_search" ).on("submit", function(e){
     e.preventDefault();
     updateListingFromForm();
-    console.log("this is the list");
-
   });
 
-/***** Updating the results list with the same dates if changing cities ******/
+  /***** Updating the results list with the same dates if changing cities ******/
 
   $( "#citiesList" ).change(function(e){
     updateListingFromForm();
@@ -116,8 +120,46 @@ $(function() {
 
 	/***** SEARCH RESULTS - APARTMENTS ******/
 
+
+  /***** APARTMENTS - Liked or not button ******/
+
 	$(document).on('click', '.like_button', function() {
 		$(this).toggleClass("not_liked");
 	});
+
+  /***** Map -- markers ******/
+
+  var map;
+  var bounds = new google.maps.LatLngBounds();
+  var markers = [];
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 37.7833, lng: -122.4167},
+    zoom: 13
+  });
+
+  var mapAddMarker = function(lat, lng, title) {
+    var position = new google.maps.LatLng(lat, lng);
+    
+    bounds.extend(position);
+
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map,
+      title: title
+    });
+
+    markers.push(marker);
+  };
+
+  var mapResetMarkers = function() {
+    while (markers.length > 0) {
+      var marker = markers.pop();
+      marker.setMap(null);
+    }
+
+    bounds = new google.maps.LatLngBounds();
+  };
 });
+
 
