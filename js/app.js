@@ -65,10 +65,41 @@ $(function() {
         html = "<p>No results found.</p>";
       }
 
+      /** add elements to the DOM **/
       $( "#apartments" ).html(html);
+
+      initializedCarousel();
+
     });
   };
 
+/** initialize carousel **/
+
+  var initializedCarousel = function(){
+    $('.jcarousel').jcarousel();
+
+    $('.jcarousel-control-prev')
+      .on('jcarouselcontrol:active', function() {
+        $(this).removeClass('inactive');
+      })
+      .on('jcarouselcontrol:inactive', function() {
+        $(this).addClass('inactive');
+      })
+      .jcarouselControl({
+        target: '-=1'
+      });
+
+    $('.jcarousel-control-next')
+      .on('jcarouselcontrol:active', function() {
+        $(this).removeClass('inactive');
+      })
+      .on('jcarouselcontrol:inactive', function() {
+        $(this).addClass('inactive');
+      })
+      .jcarouselControl({
+        target: '+=1'
+      });
+  };
 
   var updateListingFromForm = function(){
     var city = $( "#citiesList" ).val();
@@ -140,6 +171,7 @@ $(function() {
 
       infowindow.open(map, marker);
       openInfowindow = infowindow;
+      initializedCarousel();
     });
 
     markers.push(marker);
@@ -158,6 +190,7 @@ $(function() {
   /***** Handlebars templates ******/
 
   var rentalTemplate = Handlebars.compile($("#rentals-template").html());
-});
 
+
+});
 
