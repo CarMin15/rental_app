@@ -18,7 +18,7 @@
 		<!-- Navigation header -->
 		<section class="navigation_header">	
 			<div>
-				<img src="images/red_triangle.jpeg" alt="Rental App">
+				<img src="images/logo.png" alt="Rental App">
 			</div>
 			<div>	
 				<form class="cities">
@@ -35,19 +35,16 @@
 					<li>
 						<a href="#">
 							<span>Messages</span>
-							<img src="images/bubble.png" alt="Mail box" class="header_icon">
 						</a>
 					</li>
 					<li>
 						<a href="#">
 							<span>Help</span>
-							<img src="images/help.png" alt="Mail box" class="header_icon">
 						</a>
 					</li>
 					<li>
 					<a href="#">
-						<span>Maria</span>
-						<img src="images/snoopy.png" alt="Mail box" class="header_icon2">
+						<span>Log in</span>
 					</a></li>
 				</ul>
 			</div>
@@ -91,7 +88,9 @@
 		      	<div class="jcarousel">
 		          	<ul>
                         {{#each pictures}}
-                            <li style="width: 385px; height: 250px;"><img src="{{url}}" style="display: block; width: 100%; height: 100%;"></li>
+                            <li>
+                                <img src="{{url}}">
+                            </li>
                         {{/each}}
 		          	</ul>
 		      	</div>
