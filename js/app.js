@@ -144,7 +144,9 @@ $(function() {
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.7833, lng: -122.4167},
-    zoom: 13
+    zoom: 13,
+    streetViewControl: false,
+    mapTypeControl: false
   });
 
   var mapAddMarker = function(lat, lng, id, html) {
@@ -154,7 +156,8 @@ $(function() {
 
     var marker = new google.maps.Marker({
       position: position,
-      map: map
+      map: map,
+      icon: 'images/marker.png'
     });
 
     marker.id = id;
