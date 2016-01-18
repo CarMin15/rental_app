@@ -1,6 +1,5 @@
 This is my first JavaScript project.
 
-I am in the journey to become a front-end developer and as a former teacher I know how much practicing is important when learning new skills.
 My goal here was to learn from the best and implement a real world application while having fun! :)
 All feedbacks are welcome and appreciated! :)
 You can contact me at: maria.rosa.carrion@gmail.com
@@ -19,6 +18,6 @@ Features:
 - Load cities from an API
 - Get rentals from an API after retrieving data from a form
 - Display rental items in a list and on a map
-- Display rental imasges using a slideshow
+- Display rental images using a slideshow
 - Show rental details within the map by clicking on a marker
 - Update rental listing when changing city
