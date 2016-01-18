@@ -20,7 +20,7 @@ Features:
 - Show rental details within the map by clicking on a marker
 - Update rental listing when changing city
 
-A demo of the project is hosted here: http://maria.commitd.io/rental_app 
+A demo of the project is hosted here: http://www.mariarosacarrion.com/rental_app  
 
 All feedbacks are welcome and appreciated! :)
 You can contact me at: maria.rosa.carrion@gmail.com
