@@ -21,5 +21,6 @@ Features:
 - Update rental listing when changing city
 
 A demo of the project is hosted here: http://maria.commitd.io/rental_app 
+
 All feedbacks are welcome and appreciated! :)
 You can contact me at: maria.rosa.carrion@gmail.com
