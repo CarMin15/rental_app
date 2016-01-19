@@ -16,16 +16,17 @@ $(function() {
 
 	/**** SEARCH BOXES - CALENDAR & BUTTON ******/
 
-
   $( "#start_date" ).datepicker({
     dateFormat: "dd-mm-yy",
-    minDate: new Date()
+    minDate: new Date(2016, 0, 19)
   });
 
   $( "#end_date" ).datepicker({
     dateFormat: "dd-mm-yy",
-    minDate: +1
+    minDate: new Date(2016, 0, 20)
   });
+
+
 
   $( "#start_date" ).datepicker("setDate", new Date());
   $( "#end_date" ).datepicker("setDate", +1);
