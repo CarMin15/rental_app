@@ -18,12 +18,12 @@ $(function() {
 
   $( "#start_date" ).datepicker({
     dateFormat: "dd-mm-yy",
-    minDate: new Date(2016, 0, 19)
+    minDate: new Date(2016, 2, 19)
   });
 
   $( "#end_date" ).datepicker({
     dateFormat: "dd-mm-yy",
-    minDate: new Date(2016, 0, 20)
+    minDate: new Date(2016, 2, 20)
   });
 
 
