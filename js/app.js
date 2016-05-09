@@ -50,10 +50,10 @@ $(function() {
         mapResetMarkers();
 
         $(data).each(function(i, apartment) {
-          apartment.liked = (apartment.user_liked) ? "" : "not_liked";  
+          apartment.liked = (apartment.user_liked) ? "" : "not_liked";
           apartment.instant_book = (apartment.instant_book) ? "active" : "";
           apartment.primary_picture_url = apartment.pictures[0].url;
-          
+
           var rentalHTML = rentalTemplate(apartment);
           html += rentalHTML;
 
@@ -111,7 +111,7 @@ $(function() {
     updateListing(city, start_date.format("DD-MM-YYYY"), end_date.format("DD-MM-YYYY"), nb_guests);
   };
 
-  
+
 
   $( "#rentals_search" ).on("submit", function(e){
     e.preventDefault();
@@ -143,6 +143,8 @@ $(function() {
   var markers = [];
   var openInfowindow;
 
+  $('#map').width($(window).width() - $('#rentals').width());
+
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.7833, lng: -122.4167},
     zoom: 13,
@@ -152,7 +154,7 @@ $(function() {
 
   var mapAddMarker = function(lat, lng, id, html) {
     var position = new google.maps.LatLng(lat, lng);
-    
+
     bounds.extend(position);
 
     var marker = new google.maps.Marker({
@@ -197,4 +199,3 @@ $(function() {
 
 
 });
-
