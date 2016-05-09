@@ -355,12 +355,11 @@
 
 #map_location {
 	top: 61px;
-    position: fixed;
-    right: 0;
-    left: auto;
-    bottom: 0;
-    width: 40%;
-    height: 100%;
+  position: fixed;
+  right: 0;
+  left: auto;
+  bottom: 0;
+  height: 100%;
 }
 
 #map_location #map {

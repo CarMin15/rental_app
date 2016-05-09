@@ -143,13 +143,18 @@ $(function() {
   var markers = [];
   var openInfowindow;
 
-  $('#map').width($(window).width() - $('#rentals').width());
-
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.7833, lng: -122.4167},
     zoom: 13,
     streetViewControl: false,
     mapTypeControl: false
+  });
+
+  $('#map').width($(window).width() - $('#rentals').width());
+
+  $(window).on('resize', function() {
+   $('#map').width($(window).width() - $('#rentals').width());
+   google.maps.event.trigger(map, "resize");
   });
 
   var mapAddMarker = function(lat, lng, id, html) {
