@@ -26,10 +26,8 @@ $(function() {
     minDate: new Date(2016, 2, 20)
   });
 
-
-
-  $( "#start_date" ).datepicker("setDate", new Date());
-  $( "#end_date" ).datepicker("setDate", +1);
+  $( "#start_date" ).datepicker("setDate", new Date(2016, 2, 19));
+  $( "#end_date" ).datepicker("setDate", new Date(2016, 2, 20));
 
   $( "#start_date" ).on("change", function(e){
     var start_date = moment($( "#start_date" ).val(), "DD-MM-YYYY");
@@ -201,6 +199,5 @@ $(function() {
   /***** Handlebars templates ******/
 
   var rentalTemplate = Handlebars.compile($("#rentals-template").html());
-
 
 });
